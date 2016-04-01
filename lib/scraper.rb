@@ -1,17 +1,21 @@
 require 'open-uri'
 require 'nokogiri'
 require 'pry'
+require_relative 'jobs'
 
 class Scraper
 
   def scrape
     open_url = open("https://weworkremotely.com")
     doc = Nokogiri::HTML(open_url)
-    results = {}
+    @@results = []
     doc.css('li').each do |list_item|
-      Jobs.new(company: list_item.css('.company'), position: list_item.css('.title').text, date_posted: list_item.css('.date').text)
+      @@results << Job.new(list_item.css('.company').text, list_item.css('.title').text, list_item.css('.date').text)
     end
-    results
+    @@results
   end
 
 end
+
+scraper = Scraper.new
+binding.pry
