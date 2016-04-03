@@ -2,14 +2,14 @@ require 'date'
 require 'pry'
 
 class Job
-  attr_accessor :id, :company, :position, :description, :published_date, :url, :category
+  attr_accessor :id, :company, :name, :description, :published_date, :url, :category
 
   @@all = []
 
-  def initialize(id: nil, company: nil, position: , description: nil, published_date: nil, url: nil, category: nil)
+  def initialize(id: nil, company: nil, name: nil, description: nil, published_date: nil, url: nil, category: nil)
     @id = id
     @company = company
-    @position = position
+    @name = name
     @description = description
     @published_date = published_date
     @url = url

@@ -30,4 +30,8 @@ class Category
     self.jobs.collect { |j| j.company }.uniq
   end
 
+  def self.find_or_create_by_name(name)
+    self.all.detect { |category| category.name == name } || self.create(name)
+  end
+
 end
