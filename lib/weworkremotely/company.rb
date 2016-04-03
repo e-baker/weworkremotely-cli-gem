@@ -1,4 +1,4 @@
-class Company
+class WeWorkRemotely::Company
   attr_accessor :name, :jobs
 
   @@all = []

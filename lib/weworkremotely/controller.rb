@@ -1,4 +1,4 @@
-class WeWorkRemotelyController
+class Controller
 
   def initialize
     scraper = Scraper.new
@@ -20,7 +20,7 @@ class WeWorkRemotelyController
       puts "     (b)usiness/exec & management"
       puts "     all (o)ther jobs"
       puts "You can also look by job (n)umber."
-      input = STDIN.gets.strip
+      input = gets.strip
       case input
       when "a"
         list_all
@@ -42,9 +42,15 @@ class WeWorkRemotelyController
         list_by_category("business")
       when "n"
         puts "Which job number would you like to see?"
-        number = gets
+        number = gets.strip
         Job.find_by_id(number)
       end
+    end
+  end
+
+  def list_all
+    Job.all.each do |j|
+      puts "#{j.id}. #{j.name} for #{j.company}"
     end
   end
 

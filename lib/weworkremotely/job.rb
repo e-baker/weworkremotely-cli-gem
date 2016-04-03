@@ -1,6 +1,3 @@
-require 'date'
-require 'pry'
-
 class Job
   attr_accessor :id, :company, :name, :description, :published_date, :url, :category
 
