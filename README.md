@@ -1,2 +1,3 @@
-# weworkremotely-cli-gem
-A ruby gem with cli for listing jobs on weworkremotely
+#We Work Remotely
+
+This Ruby Gem provides a CLI
