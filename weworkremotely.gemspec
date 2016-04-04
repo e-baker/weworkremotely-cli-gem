@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.summary     = 'We Work Remotely'
   s.authors     = ['Eric Baker']
   s.email       = 'eric@ericbaker.me'
-  s.files       = 
-  s.homepage    = 'ericbaker.me/gems/weworkremotely-cli-gem'
+  s.files       = ['config/environment.rb','lib/weworkremotely.rb','lib/weworkremotely/category.rb','lib/weworkremotely/company.rb','lib/weworkremotely/controller.rb','lib/weworkremotely/job.rb','lib/weworkremotely/scraper.rb']
+  s.homepage    = 'http://ericbaker.me/gems/weworkremotely-cli-gem'
   s.license     = 'MIT'
 end
