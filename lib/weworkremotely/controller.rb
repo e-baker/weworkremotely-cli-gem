@@ -20,6 +20,7 @@ class Controller
       puts "     (b)usiness/exec & management"
       puts "     all (o)ther jobs"
       puts "You can also look by job (n)umber."
+      puts "To exit, type 'exit'."
       input = gets.strip
       case input
       when "a"
@@ -43,14 +44,43 @@ class Controller
       when "n"
         puts "Which job number would you like to see?"
         number = gets.strip
-        Job.find_by_id(number)
+        show_job(number)
       end
     end
   end
 
   def list_all
     Job.all.each do |j|
-      puts "#{j.id}. #{j.name} for #{j.company}"
+      puts "#{j.id}. #{j.name} for #{j.company.name}"
+    end
+  end
+
+  def show_job(id)
+    if j = Job.find_by_id(id)
+      puts "===== Job Details ====="
+      puts ""
+      puts "Job ID:   #{j.id}"
+      puts "Title:    #{j.name}"
+      puts "Company:  #{j.company.name}"
+      puts "Category: #{j.category.name.capitalize}"
+      puts "Posted:   #{j.published_date}"
+      puts "Job URL:  #{j.url}"
+      puts ""
+      puts "======================="
+      puts ""
+    else
+      puts "======== ERROR ========"
+      puts ""
+      puts "Could not find a job with that ID."
+      puts ""
+      puts "======================="
+    end
+  end
+
+  def list_by_category(category)
+    c = Category.find_by_name(category)
+    c.jobs.each do |job|
+      puts "#{job.id}. #{job.name} for #{job.company.name}"
     end
   end
 

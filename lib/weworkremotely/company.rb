@@ -1,4 +1,4 @@
-class WeWorkRemotely::Company
+class Company
   attr_accessor :name, :jobs
 
   @@all = []
@@ -35,7 +35,7 @@ class WeWorkRemotely::Company
     self.jobs.collect { |job| job.category }.uniq
   end
 
-  def self.find_or_create_by_name(name)
+  def self.find_or_create_by_name(name, *job)
     self.all.detect { |company| company.name == name } || self.create(name)
   end
 
