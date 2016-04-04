@@ -66,7 +66,7 @@ class Controller
       puts "Posted:   #{j.published_date}"
       puts "Job URL:  #{j.url}"
       puts "Job Description:"
-      puts "#{j.description}"
+      puts "#{j.description.squeeze("\n")}"
       puts ""
       puts "======================="
       puts ""
