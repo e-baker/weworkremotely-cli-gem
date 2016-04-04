@@ -3,11 +3,12 @@ class Job
 
   @@all = []
 
-  def initialize(id: nil, company: nil, name: nil, published_date: nil, url: nil, category: nil)
-    @id = id
+  def initialize(id: nil, company: nil, name: nil, description: nil, published_date: nil, url: nil, category: nil)
+    @id = id if id
     @name = name
-    @published_date = published_date
-    @url = url
+    @published_date = published_date if published_date
+    @url = url if url
+    @description = description if description
     @company = Company.find_or_create_by_name(company) if company
     @company.add_job(self)
     @category = Category.find_or_create_by_name(category) if category

@@ -65,6 +65,8 @@ class Controller
       puts "Category: #{j.category.name.capitalize}"
       puts "Posted:   #{j.published_date}"
       puts "Job URL:  #{j.url}"
+      puts "Job Description:"
+      puts "#{j.description}"
       puts ""
       puts "======================="
       puts ""
@@ -78,10 +80,13 @@ class Controller
   end
 
   def list_by_category(category)
+    puts ""
     c = Category.find_by_name(category)
+    puts "There are <#{c.jobs.length}> #{category} jobs!"
     c.jobs.each do |job|
       puts "#{job.id}. #{job.name} for #{job.company.name}"
     end
+    puts ""
   end
 
 end
