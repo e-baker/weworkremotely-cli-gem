@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'weworkremotely'
-  s.version     = '1.2'
+  s.version     = '1.3'
   s.date        = '2016-04-03'
   s.description = 'A catalog of recent remote job listings found on weworkremotely.com.'
   s.summary     = 'We Work Remotely'
@@ -17,7 +17,6 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "nokogiri", "~> 1.6.7"
   s.add_development_dependency "pry"
   s.add_runtime_dependency "require_all"
-  s.add_development_dependency "coderay"
   #s.add_development_dependency "open-uri"
   s.add_runtime_dependency "rails-html-sanitizer", "~> 1.0"
 end
