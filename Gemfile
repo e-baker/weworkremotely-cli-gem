@@ -1,4 +1,7 @@
 # A sample Gemfile
 source "https://rubygems.org"
 
-gemspec
+gem 'bundler'
+gem 'nokogiri'
+gem 'rails-html-sanitizer'
+gem 'require_all'
