@@ -3,7 +3,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |s|
   s.name        = 'weworkremotely'
-  s.version     = '1.3.2'
+  s.version     = '1.3.3'
   s.date        = '2016-04-03'
   s.description = 'A catalog of recent remote job listings found on weworkremotely.com.'
   s.summary     = 'We Work Remotely'
