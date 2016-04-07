@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/weworkremotely'
+require './lib/weworkremotely'
 
-Controller.new.call
+WeWorkRemotely::Controller.new.call

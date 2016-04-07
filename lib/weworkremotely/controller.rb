@@ -1,7 +1,7 @@
-class Controller
+class WeWorkRemotely::Controller
 
   def initialize
-    scraper = Scraper.new
+    scraper = WeWorkRemotely::Scraper.new
     scraper.scrape
   end
 
@@ -50,13 +50,13 @@ class Controller
   end
 
   def list_all
-    Job.all.each do |j|
+    WeWorkRemotely::Job.all.each do |j|
       puts "#{j.id}. #{j.name} for #{j.company.name}"
     end
   end
 
   def show_job(id)
-    if j = Job.find_by_id(id)
+    if j = WeWorkRemotely::Job.find_by_id(id)
       puts "===== Job Details ====="
       puts ""
       puts "Job ID:   #{j.id}"
@@ -81,7 +81,7 @@ class Controller
 
   def list_by_category(category)
     puts ""
-    c = Category.find_by_name(category)
+    c = WeWorkRemotely::Category.find_by_name(category)
     puts "There are <#{c.jobs.length}> #{category} jobs!"
     c.jobs.each do |job|
       puts "#{job.id}. #{job.name} for #{job.company.name}"

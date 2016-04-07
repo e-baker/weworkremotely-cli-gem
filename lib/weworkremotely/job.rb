@@ -1,4 +1,4 @@
-class Job
+class WeWorkRemotely::Job
   attr_accessor :id, :company, :name, :description, :published_date, :url, :category
 
   @@all = []
@@ -9,9 +9,9 @@ class Job
     @published_date = published_date if published_date
     @url = url if url
     @description = description if description
-    @company = Company.find_or_create_by_name(company) if company
+    @company = WeWorkRemotely::Company.find_or_create_by_name(company) if company
     @company.add_job(self)
-    @category = Category.find_or_create_by_name(category) if category
+    @category = WeWorkRemotely::Category.find_or_create_by_name(category) if category
     @category.add_job(self)
     @@all << self
   end

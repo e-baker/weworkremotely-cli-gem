@@ -1,4 +1,4 @@
-class Company
+class WeWorkRemotely::Company
   attr_accessor :name, :jobs
 
   @@all = []
@@ -21,7 +21,7 @@ class Company
   end
 
   def self.create(name)
-    company = Company.new(name)
+    company = WeWorkRemotely::Company.new(name)
     company.save
     company
   end

@@ -1,4 +1,4 @@
-class Scraper
+class WeWorkRemotely::Scraper
 
   def scrape
     #open_url = open("https://weworkremotely.com")
@@ -36,11 +36,11 @@ class Scraper
     @@results = []
     doc.xpath("//item").each do |list_item|
       title = list_item.css('title').text.split(": ")
-      catgeory = Category.find_or_create_by_name(category)
+      catgeory = WeWorkRemotely::Category.find_or_create_by_name(category)
       id = list_item.css('guid').text.split("/").last.split("-").first
       sanitizer = Rails::Html::FullSanitizer.new
       sanitized_description = sanitizer.sanitize(list_item.css('description').text)
-      @@results << Job.new(id: id, company: title[0], name: title[1], description: sanitized_description, published_date: list_item.css('pubDate').text, url: list_item.css('guid').text, category: category)
+      @@results << WeWorkRemotely::Job.new(id: id, company: title[0], name: title[1], description: sanitized_description, published_date: list_item.css('pubDate').text, url: list_item.css('guid').text, category: category)
     end
   end
 

@@ -21,6 +21,5 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "nokogiri", "~> 1.6.7"
   s.add_development_dependency "pry"
   s.add_runtime_dependency "require_all"
-  #s.add_development_dependency "open-uri"
   s.add_runtime_dependency "rails-html-sanitizer", "~> 1.0"
 end

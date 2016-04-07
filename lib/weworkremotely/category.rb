@@ -1,4 +1,4 @@
-class Category
+class WeWorkRemotely::Category
   attr_accessor :name, :jobs
 
   @@all = []
@@ -21,7 +21,7 @@ class Category
   end
 
   def self.create(name)
-    category = Category.new(name)
+    category = WeWorkRemotely::Category.new(name)
     category.save
     category
   end
